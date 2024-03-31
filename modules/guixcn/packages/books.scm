@@ -19,20 +19,20 @@
   #:use-module ((guix licenses) #:prefix license:))
 
 (define-public foliate
-  (let* ((commit "efddb107ae3c3a7c3acca73ad0c6a19981234e04")
-         (revision "0")
-         (version* (git-version "3.0.0" revision commit))
-         (foliate-js
-          (origin
-            (method git-fetch)
-            (uri (git-reference
-                  (url "https://github.com/johnfactotum/foliate-js")
-                  (commit "ad25f6b5c3d9d044941d8ea858324b20a5352512")))
-            (file-name
-             (git-file-name "foliate-js" version*))
-            (sha256
-             (base32
-              "0yfjyfhnd2nd3yln7r3h1pm08x5pv5kxvkh853s9nd66n3h6k1j4")))))
+    (package
+      (name "foliate")
+      (version "0fbdd04bf25637aecb7883842eb729c91ce62d3d")
+      (source (origin
+              (method git-fetch)
+              (uri (git-reference
+                    (url "https://github.com/johnfactotum/foliate.git")
+                    (commit "0fbdd04bf25637aecb7883842eb729c91ce62d3d")
+                    (recursive? #t)
+                    ))
+              (file-name (git-file-name name version))
+              (sha256
+               (base32
+                "053lqm67yasf9498svm7czf689b8f2076zdpz5csnxqijb34vz6f"))))
     (package
       (name "foliate")
       (version version*)
