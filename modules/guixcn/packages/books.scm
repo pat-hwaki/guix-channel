@@ -32,7 +32,7 @@
               (file-name (git-file-name name version))
               (sha256
                (base32
-                "053lqm67yasf9498svm7czf689b8f2076zdpz5csnxqijb34vz6f"))))
+                "1qc51jw7wfwxw2hh8b8rjl0cm1qrg40j5aadqlslkn04608z5kn6"))))
       (build-system meson-build-system)
       (arguments
        (list #:glib-or-gtk? #t
