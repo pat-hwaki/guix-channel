@@ -38,9 +38,6 @@
        (list #:glib-or-gtk? #t
              #:phases
              #~(modify-phases %standard-phases
-                 (add-after 'unpack 'copy-foliate-js
-                   (lambda _
-                     (copy-recursively #$foliate-js "src/foliate-js")))
                  (add-after 'unpack 'skip-gtk-update-icon-cache
                    (lambda _
                      (substitute* "meson.build"
