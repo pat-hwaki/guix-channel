@@ -33,18 +33,6 @@
               (sha256
                (base32
                 "053lqm67yasf9498svm7czf689b8f2076zdpz5csnxqijb34vz6f"))))
-    (package
-      (name "foliate")
-      (version version*)
-      (source (origin
-                (method git-fetch)
-                (uri (git-reference
-                      (url "https://github.com/johnfactotum/foliate.git")
-                      (commit "efddb107ae3c3a7c3acca73ad0c6a19981234e04")))
-                (file-name (git-file-name name version))
-                (sha256
-                 (base32
-                  "1wicjwa8gdsjcbrj5g2bv88x0ddsf6ql2j8r7hp2p692l1bhb9dp"))))
       (build-system meson-build-system)
       (arguments
        (list #:glib-or-gtk? #t
@@ -77,7 +65,7 @@
              gettext-minimal
              gobject-introspection
              desktop-file-utils
-             foliate-js))
+             ))
       (inputs
        (list libadwaita
              glib
@@ -89,4 +77,4 @@
       (synopsis "Read books in style")
       (description "A simple and modern GTK e-book reader")
       ;;             foliate       foliate-js
-      (license (list license:gpl3 license:expat)))))
+      (license (list license:gpl3 license:expat))))
